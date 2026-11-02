@@ -105,13 +105,20 @@ def get_birthday(birthday, year, today):
 def get_ciba():
     url = "http://open.iciba.com/dsapi/"
     headers = {
-        'Content-Type': 'application/json',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
                       'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
     }
-    r = get(url, headers=headers)
-    note_en = r.json()["content"]
-    note_ch = r.json()["note"]
+    try:
+        r = get(url, headers=headers, timeout=10)
+        r.raise_for_status()
+        resp_json = r.json()
+        note_en = resp_json["content"]
+        note_ch = resp_json["note"]
+    except Exception as e:
+        # 网络/JSON解析失败，打印提示信息，返回兜底内容
+        print(f"【内容获取失败】词霸每日一句接口解析异常：{e}")
+        note_ch = "愿每一天都充满阳光"
+        note_en = "May every day be full of sunshine."
     return note_ch, note_en
  
  
