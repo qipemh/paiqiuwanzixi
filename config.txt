@@ -1,7 +1,7 @@
 {
 "app_id": "wxcbfc1e5fae250a14",
 "app_secret": "1613f7aa49cbdfffa9abb0fc25fa3620",
-"template_id": "N5G6X546paCQEMUXuhdtam8z2Sa4YBjfjA6-uqxrKc8",
+"template_id": "bXr4puAdYQu1shKvQhbAsesca505Ktney-zTUGyP7tQ",
 "user": ["oU0hv2xzQe7yTAraKaXDTrWhPyvc","oU0hv29LWKCXgymOo8UK_bps12nI"],
 "weather_key": "0909cf149ab24d55b3c37d50a8acc33a",
 "region": "玉山县",
